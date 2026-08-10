@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARRIDE × CALISTHENICS — Maquette</title>
+<title>MATHIEU_SWA × CALISTHENICS — Coaching callisthénie individuel, Lyon &amp; visio</title>
+<meta name="description" content="Coaching callisthénie sur mesure avec Mathieu (mathieu_swa) : programmes préfabriqués, programmes personnalisés, coaching visio. Planche, front lever, one arm handstand. Bilan découverte 150€.">
+<meta property="og:title" content="MATHIEU_SWA × CALISTHENICS — Coaching callisthénie individuel">
+<meta property="og:description" content="Programmes préfabriqués, sur mesure et coaching visio. Une méthode exigeante pour des figures propres et durables.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MATHIEU_SWA × CALISTHENICS">
+<meta name="twitter:description" content="Coaching callisthénie individuel — programmes sur mesure et suivi visio.">
+<meta name="twitter:image" content="og-image.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111111'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-weight='700' font-size='40' fill='%23E63946' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -111,8 +121,87 @@
   }
   .navlinks a:hover{color:var(--paper);}
   .navlinks a:hover::after{width:100%;}
-  .nav-right{display:flex;align-items:center;gap:28px;}
+  .nav-right{display:flex;align-items:center;gap:18px;}
+  .contact-direct{
+    margin-top:22px;
+    font-family:'Roboto Mono',monospace;
+    font-size:13px;
+    color:var(--paper-dim);
+    display:flex;align-items:center;justify-content:center;gap:10px;
+  }
+  .contact-direct a{color:var(--paper);border-bottom:1px solid var(--line);transition:border-color .25s var(--ease), color .25s var(--ease);}
+  .contact-direct a:hover{color:var(--accent);border-color:var(--accent);}
+  .contact-sep{color:var(--line);}
+  .response-time{
+    margin-top:10px;font-family:'Roboto Mono',monospace;font-size:11px;
+    color:#5a5a5a;letter-spacing:0.04em;text-align:center;
+  }
+  .refund-note{
+    margin-top:36px;text-align:center;
+    font-family:'Roboto Mono',monospace;font-size:12px;
+    color:var(--accent);letter-spacing:0.04em;
+  }
+  .calendly-confirm{
+    display:none;margin-top:24px;padding:16px 22px;
+    border:1px solid var(--accent);border-radius:var(--radius);
+    background:rgba(230,57,70,0.08);
+    font-family:'Roboto Mono',monospace;font-size:13px;color:var(--paper);
+    text-align:center;
+  }
+  .calendly-confirm.show{display:block;}
+  .social-links{display:flex;align-items:center;gap:10px;}
+  .social-link{
+    display:flex;align-items:center;justify-content:center;
+    width:36px;height:36px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    color:var(--paper-dim);
+    transition:border-color .25s var(--ease), color .25s var(--ease), background .25s var(--ease);
+  }
+  .social-link:hover{border-color:var(--accent);color:var(--accent);background:rgba(230,57,70,0.08);}
+  .social-link svg{width:16px;height:16px;display:block;}
+  .foot-col .social-links{gap:12px;margin-top:4px;}
+  .foot-col .social-link{width:40px;height:40px;}
   @media(max-width:860px){.navlinks{display:none;}}
+
+  .menu-toggle{
+    display:none;
+    flex-direction:column;justify-content:center;gap:5px;
+    width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0;
+  }
+  .menu-toggle span{
+    display:block;width:100%;height:2px;background:var(--paper);
+    transition:transform .25s var(--ease), opacity .25s var(--ease);
+  }
+  .menu-toggle.is-active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .menu-toggle.is-active span:nth-child(2){opacity:0;}
+  .menu-toggle.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .mobile-menu{
+    display:none;
+    flex-direction:column;
+    max-height:0;overflow:hidden;
+    background:var(--bg-alt);
+    border-bottom:1px solid var(--line);
+    transition:max-height .3s var(--ease);
+  }
+  .mobile-menu.open{max-height:320px;}
+  .mobile-menu a{
+    padding:18px 32px;
+    font-family:'Roboto Mono',monospace;font-size:13px;
+    text-transform:uppercase;letter-spacing:0.08em;
+    color:var(--paper-dim);border-bottom:1px solid var(--line-soft);
+  }
+  .mobile-menu a:hover{color:var(--paper);}
+
+  @media(max-width:860px){
+    .menu-toggle{display:flex;}
+    .mobile-menu{display:flex;}
+    .nav-right .btn-sm{display:none;}
+  }
+  @media(max-width:520px){
+    .social-links{display:none;}
+  }
 
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:10px;
@@ -174,6 +263,7 @@
     border-right:1px solid var(--line);
   }
   .hero-stat:last-child{border-right:none;}
+  .placeholder-stat .num{color:var(--accent) !important;}
   .hero-stat .num{
     font-family:'Oswald',sans-serif;font-weight:700;
     font-size:30px;color:var(--paper);
@@ -198,6 +288,15 @@
   .hero-photo::after{
     content:'';position:absolute;inset:0;
     background:linear-gradient(180deg, rgba(17,17,17,0) 40%, rgba(17,17,17,0.85) 100%);
+  }
+
+  @media(max-width:860px){
+    .hero{padding-top:100px;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-text{padding-bottom:40px;padding-right:0;}
+    .hero-photo{min-height:360px;border-left:none;border-top:1px solid var(--line);}
+    .hero-stats{flex-wrap:wrap;}
+    .hero-stat{flex:1 1 50%;border-right:none;padding-bottom:20px;}
   }
   .hero-photo-tag{
     position:absolute;bottom:22px;left:22px;z-index:2;
@@ -449,6 +548,8 @@
     padding-top:26px;flex-wrap:wrap;gap:14px;
   }
   .foot-bottom span{font-size:11px;color:#5a5a5a;letter-spacing:0.04em;}
+  .foot-bottom a{color:#5a5a5a;border-bottom:1px solid transparent;}
+  .foot-bottom a:hover{color:var(--paper-dim);border-color:var(--paper-dim);}
 
   .fade-up{
     opacity:0;transform:translateY(24px);
@@ -456,12 +557,14 @@
   }
   .fade-up.in{opacity:1;transform:translateY(0);}
 </style>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
 
 <header class="nav" id="siteNav">
   <div class="wrap nav-inner">
-    <div class="logo">ARRIDE<span class="x">×</span>CALISTHENICS</div>
+    <div class="logo">MATHIEU_SWA<span class="x">×</span>CALISTHENICS</div>
     <ul class="navlinks">
       <li><a href="#methode">Méthode</a></li>
       <li><a href="#programmes">Programmes</a></li>
@@ -469,8 +572,25 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-right">
+      <div class="social-links">
+        <a href="https://www.instagram.com/mathieu_swa/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram — mathieu_swa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@mathieu_swa" target="_blank" rel="noopener" class="social-link" aria-label="TikTok — mathieu_swa">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2 1.8 3.6 4 3.9v3c-1.5 0-2.9-.4-4-1.2v6.4c0 3.4-2.7 6-6 6s-6-2.6-6-6 2.7-6 6-6c.4 0 .8 0 1.1.1v3.1c-.4-.1-.7-.2-1.1-.2-1.7 0-3 1.4-3 3s1.3 3 3 3 3-1.4 3-3V3h3z"/></svg>
+        </a>
+      </div>
       <a href="#programmes" class="btn btn-fill btn-sm">Commencer</a>
+      <button id="menuToggle" class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#methode">Méthode</a>
+    <a href="#programmes">Programmes</a>
+    <a href="#resultats">Résultats</a>
+    <a href="#contact">Contact</a>
   </div>
 </header>
 
@@ -485,18 +605,19 @@
         sans la base. Suivi individuel en visio, ajusté chaque semaine.
       </p>
       <div class="hero-cta">
-        <a href="#contact" class="btn btn-fill">Réserver un bilan</a>
+        <a href="#contact" class="btn btn-fill">Réserver l'appel gratuit</a>
         <a href="#programmes" class="btn btn-outline">Voir les programmes</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat"><span class="num">150€</span><span class="lbl">Bilan découverte</span></div>
         <div class="hero-stat"><span class="num">1&nbsp;:&nbsp;1</span><span class="lbl">Suivi individuel</span></div>
         <div class="hero-stat"><span class="num">100%</span><span class="lbl">Programme sur mesure</span></div>
+        <div class="hero-stat placeholder-stat"><span class="num">XX</span><span class="lbl">Athlètes suivis — à confirmer</span></div>
       </div>
     </div>
     <div class="hero-photo">
-      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop" alt="Athlète en position de planche à la salle">
-      <div class="hero-photo-tag"><span class="dot"></span>Séance du soir — salle partenaire</div>
+      <img src="assets/hero-handstand-coucher-soleil.jpg" alt="Mathieu en équilibre sur parallettes, coucher de soleil">
+      <div class="hero-photo-tag"><span class="dot"></span>Séance du soir — extérieur</div>
     </div>
   </div>
   <div class="marquee">
@@ -614,6 +735,7 @@
         <div class="addon-row"><span>Soit / mois</span><span>200€</span></div>
       </div>
     </div>
+    <p class="refund-note">✓ Satisfait ou remboursé sur le premier mois.</p>
   </div>
 </section>
 
@@ -628,13 +750,13 @@
     </div>
 
     <div class="results-grid fade-up">
-      <div class="r-item r-1"><img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1000&auto=format&fit=crop" alt="Entraînement callisthénie en salle"></div>
-      <div class="r-item r-2"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&auto=format&fit=crop" alt="Travail au poids du corps"></div>
+      <div class="r-item r-1"><img src="assets/resultats-handstand-golden-hour.jpg" alt="Handstand sur blocs, golden hour"></div>
+      <div class="r-item r-2"><img src="assets/resultats-pseudo-planche-salle.jpg" alt="Pseudo planche en salle"></div>
       <div class="r-quote"><p style="font-size:13px;color:var(--paper-dim);">« La base compte plus que la figure. »</p></div>
-      <div class="r-item r-4"><img src="https://images.unsplash.com/photo-1584735175315-9d5df23860e6?q=80&w=1000&auto=format&fit=crop" alt="Séance de renforcement"></div>
-      <div class="r-item r-5"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=800&auto=format&fit=crop" alt="Étirement et mobilité"></div>
-      <div class="r-item r-3"><img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=600&auto=format&fit=crop" alt="Gainage sur parallettes"></div>
-      <div class="r-item r-6"><img src="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?q=80&w=600&auto=format&fit=crop" alt="Salle de sport, vue large"></div>
+      <div class="r-item r-4"><img src="assets/resultats-handstand-parallettes.jpg" alt="Handstand sur parallettes en extérieur"></div>
+      <div class="r-item r-5"><img src="assets/resultats-physique-vestiaire.jpg" alt="Progression physique"></div>
+      <div class="r-item r-3"><img src="assets/resultats-lsit-compression.jpg" alt="Gainage en compression sur parallettes"></div>
+      <div class="r-item r-6"><img src="assets/resultats-physique-sdb.jpg" alt="Suivi de progression"></div>
     </div>
 
     <div class="testimonials fade-up">
@@ -656,12 +778,20 @@
 
 <section class="cta-strip" id="contact">
   <div class="wrap">
-    <div class="eyebrow" style="justify-content:center;">Bilan athlète — places limitées</div>
+    <div class="eyebrow" style="justify-content:center;">Appel découverte — 30 min, gratuit</div>
     <h2 style="margin-top:20px;">Prêt à construire <em>ta</em> base<br>avant de viser la figure ?</h2>
-    <p class="hero-sub">Un échange de 20 minutes pour cadrer ton niveau, ton objectif, et te dire honnêtement le format qui te correspond.</p>
+    <p class="hero-sub">Un échange de 30 minutes en visio pour cadrer ton niveau, ton objectif, et te dire honnêtement le format qui te correspond — sans engagement.</p>
     <div class="hero-cta">
-      <a href="mailto:mattarride@gmail.com" class="btn btn-fill">mattarride@gmail.com</a>
-      <a href="#programmes" class="btn btn-outline">Revoir les tarifs</a>
+      <a href="https://calendly.com/mattarride" target="_blank" rel="noopener" onclick="Calendly.initPopupWidget({url:'https://calendly.com/mattarride'});return false;" class="btn btn-fill">Réserver l'appel — 30 min</a>
+    </div>
+    <div class="contact-direct">
+      <a href="mailto:mattarride@gmail.com">mattarride@gmail.com</a>
+      <span class="contact-sep">·</span>
+      <a href="tel:+33699543073">06 99 54 30 73</a>
+    </div>
+    <p class="response-time">Réponse sous 24-48h.</p>
+    <div class="calendly-confirm" id="calendlyConfirm">
+      ✓ Rendez-vous confirmé — tu vas recevoir un email avec le lien de la visio.
     </div>
   </div>
 </section>
@@ -670,7 +800,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-col">
-        <div class="logo">ARRIDE<span class="x">×</span>CALISTHENICS</div>
+        <div class="logo">MATHIEU_SWA<span class="x">×</span>CALISTHENICS</div>
         <p class="foot-brand">Coaching callisthénie individuel — programmes sur mesure, suivi visio, progression mesurée. Basé en salle et à distance.</p>
       </div>
       <div class="foot-col">
@@ -685,20 +815,25 @@
         <h4>Contact</h4>
         <ul>
           <li><a href="mailto:mattarride@gmail.com">mattarride@gmail.com</a></li>
+          <li><a href="tel:+33699543073">06 99 54 30 73</a></li>
           <li><a href="#contact">Prendre un bilan</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <h4>Suivre</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">TikTok</a></li>
-        </ul>
+        <div class="social-links">
+          <a href="https://www.instagram.com/mathieu_swa/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram — mathieu_swa">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@mathieu_swa" target="_blank" rel="noopener" class="social-link" aria-label="TikTok — mathieu_swa">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2 1.8 3.6 4 3.9v3c-1.5 0-2.9-.4-4-1.2v6.4c0 3.4-2.7 6-6 6s-6-2.6-6-6 2.7-6 6-6c.4 0 .8 0 1.1.1v3.1c-.4-.1-.7-.2-1.1-.2-1.7 0-3 1.4-3 3s1.3 3 3 3 3-1.4 3-3V3h3z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 ARRIDE × CALISTHENICS — Tous droits réservés.</span>
-      <span>Maquette conçue par Gainmora</span>
+      <span>© 2026 MATHIEU_SWA × CALISTHENICS — Tous droits réservés.</span>
+      <span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · Maquette conçue par Gainmora</span>
     </div>
   </div>
 </footer>
@@ -719,6 +854,35 @@
     });
   },{threshold:0.12});
   revealEls.forEach(el=>io.observe(el));
+
+  // Calendly — confirmation on-page when a booking is completed
+  window.addEventListener('message', (e) => {
+    if (e.data?.event && e.data.event.indexOf('calendly.') === 0 && e.data.event === 'calendly.event_scheduled') {
+      const confirm = document.getElementById('calendlyConfirm');
+      if (confirm) {
+        confirm.classList.add('show');
+        confirm.scrollIntoView({behavior:'smooth', block:'center'});
+      }
+    }
+  });
+
+  // Mobile nav toggle
+  const menuBtn = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuBtn.classList.toggle('is-active', isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuBtn.classList.remove('is-active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 </script>
 
 </body>
