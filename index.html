@@ -472,34 +472,30 @@
   /* ---------- RESULTS ---------- */
   .results-grid{
     display:grid;
-    grid-template-columns:repeat(6,1fr);
-    grid-auto-rows:120px;
-    gap:12px;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
   }
   @media(max-width:760px){
-    .results-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px;}
+    .results-grid{grid-template-columns:repeat(2,1fr);}
   }
   .r-item{
     position:relative;overflow:hidden;background:#000;border:1px solid var(--line);
+    aspect-ratio:3/4;
   }
   .r-item img{
-    width:100%;height:100%;object-fit:contain;
+    width:100%;height:100%;object-fit:cover;object-position:center;
     filter:contrast(1.05) saturate(1.08);
     transition:filter .4s var(--ease), transform .5s var(--ease);
   }
   .r-item:hover img{filter:contrast(1.1) saturate(1.15);transform:scale(1.04);}
-  .r-1{grid-column:span 3;grid-row:span 2;}
-  .r-2{grid-column:span 2;grid-row:span 1;}
-  .r-3{grid-column:span 1;grid-row:span 1;}
-  .r-4{grid-column:span 2;grid-row:span 2;}
-  .r-5{grid-column:span 2;grid-row:span 1;}
-  .r-6{grid-column:span 1;grid-row:span 1;}
-  .r-quote{grid-column:span 3;grid-row:span 1;background:var(--card);border:1px solid var(--line);
-    display:flex;align-items:center;padding:0 22px;}
+  .r-quote{
+    grid-column:span 3;
+    background:var(--card);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    padding:34px 26px;text-align:center;
+  }
   @media(max-width:760px){
-    .r-1,.r-4{grid-column:span 2;grid-row:span 2;}
-    .r-2,.r-5,.r-quote{grid-column:span 2;grid-row:span 1;}
-    .r-3,.r-6{grid-column:span 1;}
+    .r-quote{grid-column:span 2;}
   }
 
   .testimonials{
@@ -612,7 +608,7 @@
         <div class="hero-stat"><span class="num">150€</span><span class="lbl">Bilan découverte</span></div>
         <div class="hero-stat"><span class="num">1&nbsp;:&nbsp;1</span><span class="lbl">Suivi individuel</span></div>
         <div class="hero-stat"><span class="num">100%</span><span class="lbl">Programme sur mesure</span></div>
-        <div class="hero-stat placeholder-stat"><span class="num">XX</span><span class="lbl">Athlètes suivis — à confirmer</span></div>
+        <div class="hero-stat"><span class="num">12</span><span class="lbl">Élèves accompagnés</span></div>
       </div>
     </div>
     <div class="hero-photo">
@@ -750,13 +746,13 @@
     </div>
 
     <div class="results-grid fade-up">
-      <div class="r-item r-1"><img src="assets/resultats-handstand-golden-hour.jpg" alt="Handstand sur blocs, golden hour"></div>
-      <div class="r-item r-2"><img src="assets/resultats-pseudo-planche-salle.jpg" alt="Pseudo planche en salle"></div>
-      <div class="r-quote"><p style="font-size:13px;color:var(--paper-dim);">« La base compte plus que la figure. »</p></div>
-      <div class="r-item r-4"><img src="assets/resultats-handstand-parallettes.jpg" alt="Handstand sur parallettes en extérieur"></div>
-      <div class="r-item r-5"><img src="assets/resultats-physique-vestiaire.jpg" alt="Progression physique"></div>
-      <div class="r-item r-3"><img src="assets/resultats-lsit-compression.jpg" alt="Gainage en compression sur parallettes"></div>
-      <div class="r-item r-6"><img src="assets/resultats-physique-sdb.jpg" alt="Suivi de progression"></div>
+      <div class="r-item"><img src="assets/resultats-handstand-golden-hour.jpg" alt="Handstand sur blocs, golden hour"></div>
+      <div class="r-item"><img src="assets/resultats-pseudo-planche-salle.jpg" alt="Pseudo planche en salle"></div>
+      <div class="r-item"><img src="assets/resultats-handstand-parallettes.jpg" alt="Handstand sur parallettes en extérieur"></div>
+      <div class="r-item"><img src="assets/resultats-physique-vestiaire.jpg" alt="Progression physique"></div>
+      <div class="r-item"><img src="assets/resultats-lsit-compression.jpg" alt="Gainage en compression sur parallettes"></div>
+      <div class="r-item"><img src="assets/resultats-physique-sdb.jpg" alt="Suivi de progression"></div>
+      <div class="r-quote"><p style="font-size:14px;color:var(--paper-dim);">« La base compte plus que la figure. »</p></div>
     </div>
 
     <div class="testimonials fade-up">
